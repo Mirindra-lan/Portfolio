@@ -5,6 +5,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import BorderBottom from "./borderBottom"
 import Image from "next/image"
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons"
 
 export default function Header() {
   const pathname = usePathname()
@@ -29,7 +31,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden sm:flex gap-4 mr-28">
+        <div className="hidden md:flex gap-4 mr-28">
           {links.map((link) => (
             <div key={link.href} className="relative">
               <Link
@@ -48,40 +50,36 @@ export default function Header() {
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="sm:hidden mr-6">
+        <div className="md:hidden mr-6">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none"
           >
             {/* Simple hamburger icon */}
-            <div className="space-y-1">
-              <span className="block w-6 h-0.5 bg-white"></span>
-              <span className="block w-6 h-0.5 bg-white"></span>
-              <span className="block w-6 h-0.5 bg-white"></span>
-            </div>
+            <FaIcon icon={isOpen ? faX : faBars} className="text-2xl text-gray-200 hover:scale-130"/>
           </button>
         </div>
       </div>
+      <BorderBottom color={true}/>
 
       {/* Drawer Menu */}
       {isOpen && (
-        <div className="sm:hidden absolute top-full left-0 w-full bg-[rgba(0,0,0,0.5)] flex flex-col items-center py-4 gap-4 z-40">
+        <div className="sm:hidden absolute top-full left-0 w-full bg-[rgba(0,0,0,0.8)] flex flex-col items-center py-4 gap-4 z-40">
           {links.map((link) => (
             <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={`px-4 py-2 text-lg transition-colors ${
-                pathname === link.href ? "text-cyan-400" : "text-white"
+            key={link.href}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className={`px-4 py-2 text-lg transition-colors ${
+              pathname === link.href ? "text-cyan-400" : "text-white"
               }`}
-            >
+              >
               {link.label}
             </Link>
-          ))}
+            ))}
         </div>
       )}
 
-      <BorderBottom color="gray" />
     </nav>
   )
 }
