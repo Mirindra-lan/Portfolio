@@ -34,14 +34,14 @@ export default function Header() {
         <div className="hidden md:flex gap-4 mr-28">
           {links.map((link) => (
             <div key={link.href} className="relative">
-              <Link
+              <a
                 href={link.href}
                 className={`px-4 py-3 transition-colors ${
                   pathname === link.href ? "text-cyan-400" : "text-white"
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
               {pathname === link.href && (
                 <div className="absolute left-0 -bottom-1 w-full h-[2px] bg-cyan-400 rounded-full"></div>
               )}
