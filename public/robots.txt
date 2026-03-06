@@ -1,0 +1,6 @@
+# *
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mirindra-lan.vercel.app/sitemap.xml

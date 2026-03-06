@@ -6,6 +6,12 @@ module.exports = {
   changefreq: 'weekly',                        // fréquence de mise à jour pour le SEO
   priority: 0.7,
   robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/'
+      }
+    ],
     additionalSitemaps: [
       'https://mirindra-lan.vercel.app/sitemap.xml',
     ],

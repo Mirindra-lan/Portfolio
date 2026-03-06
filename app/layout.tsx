@@ -19,10 +19,9 @@ export const metadata: Metadata = {
   description: "Mirindra's portfolio, fullstack developer with DevOps skills",
   keywords: ['portfolio', 'fullstack developer', 'React', 'Next.js', 'Node.js', 'Adonis', 'web development', 'ML portfolio'],
   authors: [{ name: 'LANTOSOA Mirindra Lucien', url: 'https://mirindra-lan.vercel.app' }],
-  viewport: 'width=device-width, initial-scale=1',
   icons: {
-    icon: '/icon.pg',
-    apple: '/icon.png',
+    icon: 'https://mirindra-lan.vercel.app/images/icon.pg',
+    apple: 'https://mirindra-lan.vercel.app/images/icon.png',
   },
   openGraph: {
     title: 'LANTOSOA Mirindra - Fullstack Developer',
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Mirindra Lucien Portfolio',
     images: [
       {
-        url: '/images/portfolio-preview.png',
+        url: 'https://mirindra-lan.vercel.app/images/portfolio-preview.png',
         width: 800,
         height: 600,
         alt: 'Mirindra Lucien Portfolio Preview',
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LANTOSOA Mirindra - Fullstack Developer',
     description: 'Mirindra\'s portfolio, fullstack developer with DevOps skills.',
-    images: ['/images/portfolio-preview.png'],
+    images: ['https://mirindra-lan.vercel.app/images/portfolio-preview.png'],
     creator: '@mirindra',
   },
   robots: "index, follow",
