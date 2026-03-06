@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'LANTOSOA Mirindra - Fullstack Developer',
-    description: 'Mirindra\'s portfolio, fullstack developer with DevOps skills.',
+    description: "Mirindra\'s portfolio, fullstack developer with DevOps skills.",
     images: ['https://mirindra-lan.vercel.app/images/portfolio-preview.png'],
     creator: '@mirindra',
   },
