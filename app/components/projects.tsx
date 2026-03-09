@@ -1,0 +1,71 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faDocker } from "@fortawesome/free-brands-svg-icons";
+
+export default function ProjectsList() {
+    const projects = [
+        {
+            title: "Site de gestion de bibliothèque",
+            description: "Application web pour gérer les livres, emprunts et utilisateurs.",
+            technologies: ["Symfony", "Bootstrap"],
+            github: "https://github.com/ton-compte/bibliotheque-symfony",
+            docker: null
+        },
+        {
+            title: "Site de l'association Mimoza",
+            description: "Site officiel de l'association Mimoza pour gérer contenus et événements.",
+            technologies: ["Laravel", "PHP"],
+            github: "https://github.com/ton-compte/mimoza-laravel",
+            docker: null
+        },
+        {
+            title: "Chat en temps réel",
+            description: "Application de messagerie instantanée avec la stack MERN.",
+            technologies: ["MongoDB", "Express", "React", "Node.js"],
+            github: "https://github.com/ton-compte/mern-chat",
+            docker: null
+        }
+    ];
+
+    return (
+        <section id="projects" className="py-24 text-white bg-black scroll-mt-24">
+            <div className="text-center mb-16">
+                <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,189,248,0.8)]">
+                    My Projects
+                </h2>
+                <p className="text-gray-400 mt-4">
+                    Some of my work showcasing my skills and experience
+                </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto px-6 space-y-8">
+                {projects.map((project, index) => (
+                    <div key={index} className="group flex flex-col md:flex-row justify-between items-start hover:bg-white/5 p-4 rounded-lg transition">
+                        <div className="flex-1">
+                            <h3 className="text-2xl font-semibold text-cyan-300 mb-2">{project.title}</h3>
+                            <p className="text-gray-400 mb-2">{project.description}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {project.technologies.map((tech, i) => (
+                                    <span key={i} className="bg-cyan-500/20 text-cyan-300 text-sm px-2 py-1 rounded">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="flex gap-4 mt-3 md:mt-0">
+                            {project.github && (
+                                <a href={project.github} target="_blank">
+                                    <FontAwesomeIcon icon={faGithub} className="text-gray-400 hover:text-cyan-400 text-2xl" />
+                                </a>
+                            )}
+                            {project.docker && (
+                                <a href={project.docker} target="_blank">
+                                    <FontAwesomeIcon icon={faDocker} className="text-gray-400 hover:text-cyan-400 text-2xl" />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+}

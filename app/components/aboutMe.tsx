@@ -36,7 +36,7 @@ function AboutMe() {
                     <p className="text-gray-400 mb-6">
                         I am a passionate fullstack developer specialized in building modern
                         web applications. I work with technologies like JavaScript,
-                        TypeScript, React, Node.js and Docker to create scalable and
+                        TypeScript, React, Node.js, PHP and Docker to create scalable and
                         high-performance solutions.
                     </p>
                     <p className="text-gray-400 mb-10">
@@ -45,11 +45,11 @@ function AboutMe() {
                     </p>
                     <div className="grid grid-cols-3 gap-6">
                         <div className="bg-white/5 border border-white/10 p-6 rounded-xl text-center">
-                            <h4 className="text-2xl font-bold text-cyan-400">2+</h4>
+                            <h4 className="text-2xl font-bold text-cyan-400">5+</h4>
                             <p className="text-sm text-gray-400">Years Experience</p>
                         </div>
                         <div className="bg-white/5 border border-white/10 p-6 rounded-xl text-center">
-                            <h4 className="text-2xl font-bold text-cyan-400">15+</h4>
+                            <h4 className="text-2xl font-bold text-cyan-400">10+</h4>
                             <p className="text-sm text-gray-400">Projects</p>
                         </div>
                         <div className="bg-white/5 border border-white/10 p-6 rounded-xl text-center">
