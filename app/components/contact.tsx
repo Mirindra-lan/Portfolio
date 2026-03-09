@@ -17,7 +17,7 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const resend = new Resend(process.env.RESEND_API_KEY || "re_3iU53F1o_NDQELYQ83hBJ6qLi21w2yvwq");
+  const resend = new Resend("re_3iU53F1o_NDQELYQ83hBJ6qLi21w2yvwq");
 
   const htmlMessage = `
     <div style="font-family: Arial, sans-serif; background:#f4f6fb; padding:40px;">
