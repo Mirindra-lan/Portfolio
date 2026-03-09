@@ -4,24 +4,24 @@ import { faGithub, faDocker } from "@fortawesome/free-brands-svg-icons";
 export default function ProjectsList() {
     const projects = [
         {
-            title: "Site de gestion de bibliothèque",
-            description: "Application web pour gérer les livres, emprunts et utilisateurs.",
-            technologies: ["Symfony", "Bootstrap"],
-            github: "https://github.com/ton-compte/bibliotheque-symfony",
-            docker: null
+            title: "AVR Core",
+            description: "Core system for handling audio-visual responses and integrations, providing APIs for ASR, TTS, and LLM modules.",
+            technologies: ["Node.js", "Docker", "TCP (AudioSocket)", "AI API"],
+            github: "https://github.com/Mirindra-lan/avr-core",
+            docker: "https://hub.docker.com/repositories/mirindra1911/avr-core"
         },
         {
-            title: "Site de l'association Mimoza",
+            title: "Mon portfolio",
             description: "Site officiel de l'association Mimoza pour gérer contenus et événements.",
-            technologies: ["Laravel", "PHP"],
-            github: "https://github.com/ton-compte/mimoza-laravel",
+            technologies: ["React", "Next"],
+            github: "https://github.com/Mirindra-lucien/Mirindra_portfolio",
             docker: null
         },
         {
             title: "Chat en temps réel",
             description: "Application de messagerie instantanée avec la stack MERN.",
             technologies: ["MongoDB", "Express", "React", "Node.js"],
-            github: "https://github.com/ton-compte/mern-chat",
+            github: "https://github.com/Mirindra-lucien/chat_MERN",
             docker: null
         }
     ];
