@@ -27,12 +27,12 @@ export default function Main() {
             </p>
 
             <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4">
-              <button className="w-full sm:w-auto py-1 sm:py-2 px-4 sm:px-8 bg-transparent text-white font-bold rounded-lg border-2 border-white shadow-[0_0_8px_rgba(255,255,255,0.7),0_0_15px_rgba(224,242,254,0.7),0_0_25px_rgba(224,242,254,0.5)] animate-pulse transition-transform duration-200 hover:scale-105 sm:hover:scale-110">
+              <a href="https://wa.me/+261346058262" target="_blank" className="w-full sm:w-auto py-1 sm:py-2 px-4 sm:px-8 bg-transparent text-white font-bold rounded-lg border-2 border-white shadow-[0_0_8px_rgba(255,255,255,0.7),0_0_15px_rgba(224,242,254,0.7),0_0_25px_rgba(224,242,254,0.5)] animate-pulse transition-transform duration-200 hover:scale-105 sm:hover:scale-110">
                 Contact me
-              </button>
-              <button className="w-full sm:w-auto py-1 sm:py-2 px-4 sm:px-8 bg-[rgba(152,217,236,0.5)] text-white font-bold border-3 border-white rounded-lg shadow-inner shadow-blue-100/70 animate-pulse transition-transform duration-200 hover:scale-105">
+              </a>
+              <a href="#services" className="w-full sm:w-auto py-1 sm:py-2 px-4 sm:px-8 bg-[rgba(152,217,236,0.5)] text-white font-bold border-3 border-white rounded-lg shadow-inner shadow-blue-100/70 animate-pulse transition-transform duration-200 hover:scale-105">
                 My Services
-              </button>
+              </a>
             </div>
           </div>
       </main>
