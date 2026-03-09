@@ -23,6 +23,13 @@ export default function ProjectsList() {
             technologies: ["MongoDB", "Express", "React", "Node.js"],
             github: "https://github.com/Mirindra-lucien/chat_MERN",
             docker: null
+        },
+        {
+            title: "Callscribe",
+            description: "CallScribe is an AI-powered call center assistant that captures caller and agent audio, performs real-time speech-to-text transcription, and generates intelligent response suggestions. It integrates ASR and VAD technologies to enhance agent efficiency and improve customer experience.",
+            technologies: ["Python", "Whisper", "Vosk", "sounddevice"],
+            github: "https://github.com/Mirindra-lan/CallScribe",
+            docker: null
         }
     ];
 
