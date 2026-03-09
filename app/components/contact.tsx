@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"; // faCheck pour bouton sent
 import { useState } from "react";
-import { Resend } from "resend";
 
 export default function Contact() {
   const email = "lantosoamirindra@gmail.com";
@@ -17,48 +16,27 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const resend = new Resend("re_3iU53F1o_NDQELYQ83hBJ6qLi21w2yvwq");
-
-  const htmlMessage = `
-    <div style="font-family: Arial, sans-serif; background:#f4f6fb; padding:40px;">
-      <div style="max-width:600px; margin:auto; background:white; border-radius:12px; padding:30px; box-shadow:0 10px 25px rgba(0,0,0,0.08);">
-        <h2 style="color:#333;">Thank you for your message!</h2>
-        <p style="font-size:16px; color:#555;">Hello <strong>${name}</strong> : "${mail}"</p>
-        <p style="font-size:15px; color:#555; line-height:1.6;">
-          Thank you for contacting me through my portfolio website. I have successfully received your message and I will get back to you shortly.
-        </p>
-        <p style="font-size:15px; color:#555;">Here is a copy of the message you sent:</p>
-        <div style="margin-top:15px; padding:20px; background:#f8f9ff; border-left:4px solid #6c63ff; border-radius:8px;">
-          <p style="color:#444; line-height:1.6;">${message}</p>
-        </div>
-        <hr style="margin:30px 0; border:none; border-top:1px solid #eee;">
-        <p style="font-size:14px; color:#777;">
-          Best regards,<br>
-          <strong>LANTOSOA Mirindra Lucien</strong><br>
-          Web Developer
-        </p>
-      </div>
-    </div>
-  `;
-
+ 
   const sendMail = async (event: any) => {
     event.preventDefault();
     setStatus("sending");
     setErrorMsg("");
 
     try {
-      await resend.emails.send({
-        from: "Mirindra <onboarding@resend.dev>",
-        to: [mail, email],
-        subject: "Contact Mirindra",
-        html: htmlMessage,
-      });
-      setStatus("sent");
-    } catch (err: any) {
-      console.error("Error sending email:", err);
-      setStatus("error");
-      setErrorMsg("Failed to send your message. Please try again.");
-    }
+    const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email: mail, message }),
+    });
+
+    if (!res.ok) throw new Error("Failed");
+
+    setStatus("sent");
+  } catch (err: any) {
+    console.error(err);
+    setStatus("error");
+    setErrorMsg("Failed to send your message. Please try again.");
+  }
   };
 
   // Texte et icône du bouton selon l'état
