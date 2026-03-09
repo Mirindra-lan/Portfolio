@@ -12,7 +12,7 @@ export default function ProjectsList() {
         },
         {
             title: "Mon portfolio",
-            description: "Site officiel de l'association Mimoza pour gérer contenus et événements.",
+            description: "Mirindra's portfolio",
             technologies: ["React", "Next"],
             github: "https://github.com/Mirindra-lucien/Mirindra_portfolio",
             docker: null
