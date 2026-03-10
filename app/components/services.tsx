@@ -19,7 +19,7 @@ export default function Services() {
                     Fullstack Development
                     </h3>
                     <p className="text-gray-400">
-                    Complete web applications using React, Next.js, Node.js and modern
+                    Complete web applications using React, Next.js, Node.js, PHP, symfony and modern
                     databases.
                     </p>
                 </div>
@@ -33,7 +33,7 @@ export default function Services() {
                     Backend & APIs
                     </h3>
                     <p className="text-gray-400">
-                    Scalable REST APIs, authentication systems and optimized backend
+                    Scalable REST APIs, AI APIs, authentication systems and optimized backend
                     architectures.
                     </p>
                 </div>
@@ -47,7 +47,7 @@ export default function Services() {
                     DevOps & Deployment
                     </h3>
                     <p className="text-gray-400">
-                    Docker, CI/CD pipelines, automation and production deployment.
+                    Docker, CI/CD pipelines, SEO optimisation,automation and production deployment.
                     </p>
                 </div>
             </div>

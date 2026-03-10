@@ -17,7 +17,7 @@ export default function Skills() {
                 </h3>
                 <div className="space-y-4">
                     <div>
-                        <p>React / Next.js</p>
+                        <p>React / Next.js / Vue</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
                         </div>
@@ -44,19 +44,19 @@ export default function Skills() {
                 </h3>
                 <div className="space-y-4">
                     <div>
-                        <p>Node.js</p>
+                        <p>Node.js / PHP / Python</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-blue-400 h-2 rounded-full w-[90%]"></div>
                         </div>
                     </div>
                     <div>
-                        <p>Express / Adonis</p>
+                        <p>Express / Adonis / Symfony / Laravel</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-blue-400 h-2 rounded-full w-[85%]"></div>
                         </div>
                     </div>
                     <div>
-                        <p>MongoDB / PostgreSQL</p>
+                        <p>MongoDB / PostgreSQL / MySQL</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-blue-400 h-2 rounded-full w-[85%]"></div>
                         </div>

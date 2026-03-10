@@ -11,21 +11,21 @@ export default function ProjectsList() {
             docker: "https://hub.docker.com/repositories/mirindra1911/avr-core"
         },
         {
-            title: "Mon portfolio",
-            description: "Mirindra's portfolio",
-            technologies: ["React", "Next"],
+            title: "Personal Portfolio Website",
+            description: "A modern developer portfolio showcasing my projects, skills, and experience, built with a responsive and clean design.",
+            technologies: ["React", "Next.js"],
             github: "https://github.com/Mirindra-lucien/Mirindra_portfolio",
             docker: null
         },
         {
-            title: "Chat en temps réel",
-            description: "Application de messagerie instantanée avec la stack MERN.",
+            title: "Real-Time Chat Application",
+            description: "A real-time messaging platform built with the MERN stack that allows users to communicate instantly through a responsive web interface.",
             technologies: ["MongoDB", "Express", "React", "Node.js"],
             github: "https://github.com/Mirindra-lucien/chat_MERN",
             docker: null
         },
         {
-            title: "Callscribe",
+            title: "CallScribe",
             description: "CallScribe is an AI-powered call center assistant that captures caller and agent audio, performs real-time speech-to-text transcription, and generates intelligent response suggestions. It integrates ASR and VAD technologies to enhance agent efficiency and improve customer experience.",
             technologies: ["Python", "Whisper", "Vosk", "sounddevice"],
             github: "https://github.com/Mirindra-lan/CallScribe",

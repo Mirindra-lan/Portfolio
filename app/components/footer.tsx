@@ -8,7 +8,7 @@ export default function Footer() {
                 
                 {/* Copyright */}
                 <p className="text-gray-400 text-sm mb-4 md:mb-0">
-                    &copy; {new Date().getFullYear()} LANTOSOA Mirindra Lucien. All rights reserved.
+                    Copyright &copy; {new Date().getFullYear()} by LANTOSOA Mirindra Lucien. All rights reserved.
                 </p>
 
                 {/* Réseaux sociaux */}
