@@ -3,7 +3,7 @@ import BorderBottom from "./borderBottom"
 export default function Main() {
     return (
         <main className="relative bg-[url('/background.png')] bg-cover bg-center w-full h-screen">
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/50 w-full h-screen flex flex-col justify-center items-center gap-6 px-4 sm:gap-8">
+          <div className="absolute top-0 bottom-0 left-0 right-0 dark:bg-black/50 w-full h-screen flex flex-col justify-center items-center gap-6 px-4 sm:gap-8">
             <p className="text-md sm:text-xl text-gray-400 text-center">
               Hello world, I am
             </p>
