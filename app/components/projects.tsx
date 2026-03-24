@@ -30,6 +30,13 @@ export default function ProjectsList() {
             technologies: ["Python", "Whisper", "Vosk", "sounddevice"],
             github: "https://github.com/Mirindra-lan/CallScribe",
             docker: null
+        },
+        {
+            title: "RealTalk AVR",
+            description: "Real-time voice client for AVR-Core that lets users interact with the bot directly from the browser. It includes a Node.js server that acts as a bridge—handling TCP to exchange audio with AVR-Core and WebSocket to stream audio to and from the web client.",
+            technologies: ["Node", "WebSocket", "Net TCP", "Javascript"],
+            github: "https://github.com/Mirindra-lan/RealTalk-AVR",
+            docker: null
         }
     ];
 
