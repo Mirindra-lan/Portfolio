@@ -36,7 +36,7 @@ export default function ProjectsList() {
             description: "Real-time voice client for AVR-Core that lets users interact with the bot directly from the browser. It includes a Node.js server that acts as a bridge—handling TCP to exchange audio with AVR-Core and WebSocket to stream audio to and from the web client.",
             technologies: ["Node", "WebSocket", "Net TCP", "Javascript"],
             github: "https://github.com/Mirindra-lan/RealTalk-AVR",
-            docker: null
+            docker: "https://hub.docker.com/repository/docker/mirindra1911/avr-phone-bridge"
         }
     ];
 
