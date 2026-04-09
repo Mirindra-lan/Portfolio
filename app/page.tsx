@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       {/* <Formation /> */}
       <Skills />
-      <SoftSkills />
+      {/* <SoftSkills /> */}
       <Projects/>
       <Contact />
       <Footer/>
