@@ -2,13 +2,16 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"; // faCheck pour bouton sent
-import { useState } from "react";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const email = "lantosoamirindra@gmail.com";
   const phone = "+261346058262";
   const location = "Antananarivo, Madagascar";
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [mail, setMail] = useState("");
   const [message, setMessage] = useState("");
@@ -16,30 +19,27 @@ export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
- 
   const sendMail = async (event: any) => {
     event.preventDefault();
     setStatus("sending");
     setErrorMsg("");
 
     try {
-    const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email: mail, message }),
-    });
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current!,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
 
-    if (!res.ok) throw new Error("Failed");
-
-    setStatus("sent");
-  } catch (err: any) {
-    console.error(err);
-    setStatus("error");
-    setErrorMsg("Failed to send your message. Please try again.");
-  }
+      setStatus("sent");
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setErrorMsg("Failed to send your message. Please try again.");
+    }
   };
 
-  // Texte et icône du bouton selon l'état
   const getButtonContent = () => {
     switch (status) {
       case "sending":
@@ -50,8 +50,6 @@ export default function Contact() {
             <FontAwesomeIcon icon={faCheck} /> Sent
           </span>
         );
-      case "error":
-      case "idle":
       default:
         return "Send Message";
     }
@@ -69,61 +67,54 @@ export default function Contact() {
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
-        {/* Formulaire */}
+        
+        {/* Form */}
         <form
+          ref={formRef}
           onSubmit={sendMail}
-          className="relative bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-xl shadow-lg flex flex-col gap-4"
+          className="bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-xl shadow-lg flex flex-col gap-4"
         >
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-2">Name</label>
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full p-3 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            className="w-full p-3 rounded-lg bg-black/20 border border-white/10"
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-2">Email</label>
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full p-3 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              onChange={(e) => setMail(e.target.value)}
-              required
-            />
-          </div>
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            className="w-full p-3 rounded-lg bg-black/20 border border-white/10"
+            onChange={(e) => setMail(e.target.value)}
+            required
+          />
 
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-2">Message</label>
-            <textarea
-              placeholder="Your Message"
-              rows={5}
-              className="w-full p-3 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            />
-          </div>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows={5}
+            className="w-full p-3 rounded-lg bg-black/20 border border-white/10"
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
 
           {status === "error" && <p className="text-red-400">{errorMsg}</p>}
 
           <button
             type="submit"
             disabled={status === "sending" || status === "sent"}
-            className="w-full py-3 mt-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:scale-105 transition-transform disabled:opacity-50"
+            className="w-full py-3 mt-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:scale-105 transition disabled:opacity-50"
           >
             {getButtonContent()}
           </button>
         </form>
 
-        {/* Informations de contact cliquables */}
+        {/* Contact info (unchanged) */}
         <div className="space-y-6">
-          <a
-            href={`mailto:${email}`}
-            className="flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl hover:scale-105 transition-transform"
-          >
+          <a href={`mailto:${email}`} className="flex items-center gap-4 bg-black/40 border border-white/10 p-6 rounded-xl">
             <FontAwesomeIcon icon={faEnvelope} className="text-cyan-400 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold text-cyan-300">Email</h4>
@@ -131,10 +122,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <a
-            href={`tel:${phone}`}
-            className="flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl hover:scale-105 transition-transform"
-          >
+          <a href={`tel:${phone}`} className="flex items-center gap-4 bg-black/40 border border-white/10 p-6 rounded-xl">
             <FontAwesomeIcon icon={faPhone} className="text-cyan-400 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold text-cyan-300">Phone</h4>
@@ -142,11 +130,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <a
-            href={`https://wa.me/${phone.replace(/\D/g, "")}`}
-            target="_blank"
-            className="flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl hover:scale-105 transition-transform"
-          >
+          <a href={`https://wa.me/${phone.replace(/\D/g, "")}`} target="_blank" className="flex items-center gap-4 bg-black/40 border border-white/10 p-6 rounded-xl">
             <FontAwesomeIcon icon={faWhatsapp} className="text-cyan-400 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold text-cyan-300">WhatsApp</h4>
@@ -154,7 +138,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <div className="flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl">
+          <div className="flex items-center gap-4 bg-black/40 border border-white/10 p-6 rounded-xl">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="text-cyan-400 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold text-cyan-300">Location</h4>
