@@ -68,7 +68,7 @@ export default function Skills() {
                         </div>
                     </div>
                     <div>
-                        <p>Prisma, Mongoose</p>
+                        <p>Fastify // Prisma / Mongoose</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-blue-400 h-2 rounded-full w-[85%]"></div>
                         </div>
@@ -79,29 +79,29 @@ export default function Skills() {
 
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-xl hover:shadow-purple-500/30 hover:shadow-lg transition">
                 <h3 className="text-xl font-semibold mb-6 text-purple-300">
-                    DevOps
+                    DevOps & Others
                 </h3>
                 <div className="space-y-4">
                     <div>
-                        <p>Docker</p>
+                        <p>Docker / Git / Github / CI/CD</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[85%]"></div>
                         </div>
                     </div>
                     <div>
-                        <p>Git / GitHub</p>
+                        <p>GCP / AWS</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[90%]"></div>
                         </div>
                     </div>
                     <div>
-                        <p>CI/CD</p>
+                        <p>API REST / GraphQL / AI API / WebSocket</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[80%]"></div>
                         </div>
                     </div>
                     <div>
-                        <p>GCP / AWS</p>
+                        <p>Postman / Linux / Webpack / Figma</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[80%]"></div>
                         </div>
