@@ -1,112 +1,123 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faRocket, 
+  faBrain, 
+  faUsers, 
+  faMicrochip, 
+  faCodeBranch 
+} from '@fortawesome/free-solid-svg-icons';
+import { faJs, faReact, faNodeJs, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
+// Définition de l'interface typée
+interface Step {
+  type: 'soft' | 'tech';
+  title: string;
+  desc: string;
+  date?: string;
+  icon: IconDefinition; // On utilise le type officiel de FontAwesome
+  tech?: string[];
+  color: string;
+  glow: string;
+}
 
 export default function JourneyAndSoftSkills() {
-  const steps = [
+  const steps: Step[] = [
     {
       type: 'soft',
-      title: 'Adaptabilité & Apprentissage Rapide',
-      desc: 'Capacité à pivoter rapidement entre les technos (ex: de CodeIgniter à AdonisJS) et à maîtriser de nouveaux outils.',
-      icon: '🚀',
+      title: 'Adaptabilité & Agilité',
+      desc: 'Capacité à monter en compétence rapidement sur des stacks variées, passant de frameworks legacy à des architectures modernes comme AdonisJS.',
+      icon: faRocket,
       color: 'from-cyan-400 to-blue-500',
-      shadow: 'shadow-cyan-500/40',
+      glow: 'shadow-cyan-500/20',
     },
     {
       type: 'tech',
-      title: 'Fondations Fullstack JavaScript',
-      date: '2021 - 2022',
-      desc: 'Maîtrise de l\'écosystème moderne : React, Next.js, Node.js. Développement d\'APIs RESTful et gestion de bases de données.',
-      tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Tailwind'],
+      title: 'Expertise Fullstack JS',
+      date: '2021 - 2023',
+      desc: "Développement d'applications web robustes. Spécialisation dans l'écosystème React/Next.js et la gestion de flux de données complexes.",
+      icon: faCodeBranch,
+      tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'MongoDB'],
       color: 'from-blue-400 to-blue-600',
-      shadow: 'shadow-blue-500/40',
+      glow: 'shadow-blue-500/20',
     },
     {
       type: 'soft',
-      title: 'Résolution de Problèmes Complexes',
-      desc: 'Approche analytique pour le débogage et l\'optimisation de la performance (réduction de latence).',
-      icon: '🧠',
+      title: 'Analyse & Résolution',
+      desc: 'Approche scientifique du débogage et optimisation de la latence pour les applications critiques.',
+      icon: faBrain,
       color: 'from-blue-500 to-purple-500',
-      shadow: 'shadow-blue-500/40',
+      glow: 'shadow-blue-500/20',
     },
     {
       type: 'tech',
-      title: 'Spécialisation Audio & Temps Réel',
-      date: '2023 - Présent',
-      desc: 'Conception d\'architectures complexes intégrant ASR (Vosk), TTS et communication basse latence (WebRTC, WebSocket).',
-      tech: ['AdonisJS', 'WebRTC', 'WebSocket', 'Vosk (ASR)', 'Docker'],
+      title: 'Systèmes Audio Temps Réel',
+      date: '2024 - Présent',
+      desc: 'Ingénierie de solutions de communication intelligente : intégration ASR/TTS et protocoles WebRTC/WebSockets.',
+      icon: faMicrochip,
+      tech: ['WebRTC', 'Vosk', 'AdonisJS', 'Docker', 'Socket.io'],
       color: 'from-purple-400 to-purple-600',
-      shadow: 'shadow-purple-500/40',
+      glow: 'shadow-purple-500/20',
     },
     {
       type: 'soft',
       title: 'Communication & Mentorat',
-      desc: 'Vulgarisation de concepts techniques et partage de connaissances (expérience académique/associative).',
-      icon: '🤝',
+      desc: 'Facilitateur au sein d’équipes techniques et engagement dans l’orientation académique pour les futurs ingénieurs.',
+      icon: faUsers,
       color: 'from-purple-500 to-pink-500',
-      shadow: 'shadow-purple-500/40',
+      glow: 'shadow-purple-500/20',
     }
   ];
 
   return (
     <section id="journey" className="py-24 text-white bg-black scroll-mt-24">
-      {/* Titre avec le même style que "My Skills" */}
-      <div className="text-center mb-20">
-        <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,189,248,0.6)]">
-          Parcours & Essence
+      <div className="text-center mb-24 px-6">
+        <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(56,189,248,0.4)] uppercase tracking-tighter">
+          Parcours & Mindset
         </h2>
-        <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-          L'évolution de mes compétences techniques fusionnée avec mes aptitudes humaines.
-        </p>
+        <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        {/* Ligne centrale décorative (Le Chemin Neural) */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-cyan-500 via-blue-500 to-purple-500 opacity-30"></div>
+        {/* Rail central minimaliste */}
+        <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 h-full w-[1px] bg-gradient-to-b from-cyan-500/50 via-blue-500/50 to-purple-500/50"></div>
 
-        <div className="space-y-12">
+        <div className="space-y-24">
           {steps.map((step, index) => (
-            <div key={index} className="relative flex items-center group">
+            <div key={index} className="relative flex items-start md:items-center">
               
-              {/* Point de connexion central lumineux */}
-              <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r ${step.color} border-4 border-black z-10 ${step.shadow} shadow-lg group-hover:scale-125 transition-transform duration-300`}></div>
+              {/* Icône flottante sur le rail */}
+              <div className={`absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-xl bg-[#0a0a0a] border border-white/10 z-20 ${step.glow} shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
+                <FontAwesomeIcon icon={step.icon} className={`text-lg bg-gradient-to-br ${step.color} bg-clip-text text-transparent`} style={{ color: 'transparent', backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }} />
+                {/* Fallback color si le gradient text ne s'applique pas à l'icône */}
+                <FontAwesomeIcon icon={step.icon} className={`text-lg absolute opacity-50 text-blue-400`} />
+              </div>
 
-              {/* Contenu - Alternance gauche/droite */}
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 ml-auto text-left'}`}>
-                
-                {/* Structure "Non-Card" : Fond transparent, flou et bordure subtile */}
-                <div className={`p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/10 ${index % 2 === 0 ? 'hover:-translate-x-2' : 'hover:translate-x-2'}`}>
+              {/* Contenu avec design "Open-Air" (sans carte fermée) */}
+              <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${index % 2 === 0 ? 'md:mr-auto md:text-right' : 'md:ml-auto md:text-left'}`}>
+                <div className="relative group">
+                  {step.type === 'tech' && (
+                    <span className="text-[10px] font-bold tracking-[0.3em] text-blue-500/80 uppercase">
+                      {step.date}
+                    </span>
+                  )}
                   
-                  {step.type === 'soft' ? (
-                    // Design pour Soft Skill
-                    <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'justify-end' : ''}`}>
-                      <span className="text-4xl">{step.icon}</span>
-                      <div>
-                        <h3 className={`text-xl font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-300 mt-2 text-sm leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ) : (
-                    // Design pour Parcours Technique
-                    <div>
-                      <span className="text-sm text-gray-500 uppercase tracking-widest">{step.date}</span>
-                      <h3 className="text-2xl font-bold mt-1 text-white group-hover:text-cyan-300 transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-400 mt-3 text-base leading-relaxed">
-                        {step.desc}
-                      </p>
-                      
-                      {/* Badges tech - comme dans votre section Skills */}
-                      <div className={`flex flex-wrap gap-2 mt-4 ${index % 2 === 0 ? 'justify-end' : ''}`}>
-                        {step.tech.map(t => (
-                          <span key={t} className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-cyan-200">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mt-2 text-white/90 group-hover:text-white transition-colors italic">
+                    {step.title}
+                  </h3>
+                  
+                  <p className="mt-4 text-gray-400 text-sm md:text-base leading-relaxed font-light">
+                    {step.desc}
+                  </p>
+
+                  {step.tech && (
+                    <div className={`flex flex-wrap gap-3 mt-6 ${index % 2 === 0 ? 'md:justify-end' : 'justify-start'}`}>
+                      {step.tech.map((t) => (
+                        <span key={t} className="text-[10px] px-3 py-1 border border-white/5 bg-white/[0.02] text-gray-300 rounded-sm hover:border-blue-500/30 transition-colors">
+                          {t}
+                        </span>
+                      ))}
                     </div>
                   )}
                 </div>
