@@ -6,7 +6,7 @@ import Contact from "./components/contact";
 import Projects from "./components/projects";
 import Footer from "./components/footer";
 import Formation from "./components/formation";
-import SoftSkills from "./components/softSkills;
+import SoftSkills from "./components/softSkills";
 
 export default function Home() {
   return (
