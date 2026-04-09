@@ -35,6 +35,12 @@ export default function Skills() {
                             <div className="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
                         </div>
                     </div>
+                    <div>
+                        <p>Redux</p>
+                        <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
+                            <div className="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -57,6 +63,12 @@ export default function Skills() {
                     </div>
                     <div>
                         <p>MongoDB / PostgreSQL / MySQL</p>
+                        <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
+                            <div className="bg-blue-400 h-2 rounded-full w-[85%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Prisma, Mongoose</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-blue-400 h-2 rounded-full w-[85%]"></div>
                         </div>
@@ -84,6 +96,12 @@ export default function Skills() {
                     </div>
                     <div>
                         <p>CI/CD</p>
+                        <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
+                            <div className="bg-purple-400 h-2 rounded-full w-[80%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>GCP / AWS</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[80%]"></div>
                         </div>
