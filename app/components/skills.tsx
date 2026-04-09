@@ -95,7 +95,7 @@ export default function Skills() {
                         </div>
                     </div>
                     <div>
-                        <p>API REST / GraphQL / AI API / WebSocket</p>
+                        <p>API REST / GraphQL / WebSocket</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-purple-400 h-2 rounded-full w-[80%]"></div>
                         </div>
