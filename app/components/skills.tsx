@@ -17,7 +17,7 @@ export default function Skills() {
                 </h3>
                 <div className="space-y-4">
                     <div>
-                        <p>React / Vue / Next / Vite</p>
+                        <p>React / Vue / Angular / Next / Vite</p>
                         <div className="w-full bg-gray-700 rounded-full h-2 mt-1">
                             <div className="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
                         </div>
